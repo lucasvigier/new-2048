@@ -14,5 +14,9 @@
     "repository": {
         "type": "git",
         "url": "git://github.com:lucasvigier/new-2048.git"
+    },
+    "dependencies": {
+        "express": "^4.17.1",
+        "socket.io": "^4.3.1"
     }
 }
