@@ -1,10 +1,16 @@
-import express from 'express';
-var app = express();
-var server = require('http').Server(app);
+const express = require('express')
+const app = express();
 
 app.get('/', function (req, res) {
-    res.sendFile(__dirname + 'client/index.html');
+    res.sendFile(__dirname + '/client/index.html');
 });
-app.use('/client', static(__dirname + '/client'));
 
-server.listen(2000);
+const http = require('http').createServer(app);
+const port = 8080;
+
+http.listen(port, function (err) {
+    if (err) {
+        console.error(err);
+    }
+    console.log(`Server listening at http://localhost:${port}`);
+});
